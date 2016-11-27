@@ -1,0 +1,49 @@
+#include<stdio.h>
+int max(const void*a,const void*b)
+{
+    return *(int*)a-*(int*)b;
+}
+int main()
+{
+    int T;
+    scanf("%d",&T);
+    while(T--)
+    {
+        int t,n,m=0,M=0,m1=0,M1=0,a[100],b[100];
+        scanf("%d",&t);
+        for(n=0;n<t;n++)
+            scanf("%d",&a[n]);
+        for(n=0;n<t;n++)
+            scanf("%d",&b[n]);
+        qsort(a,t,sizeof(a[0]),max);
+        qsort(b,t,sizeof(b[0]),max);
+        for(n=0;n<t;n++)
+        {
+            if(a[n]>b[n])
+                m1++;
+        }
+        if(a[0]<b[t-1])
+            M++;
+        else if(a[0]>b[t-1])
+            m++;
+        for(n=t-1;n>0;n--)
+        {
+            if(a[n]<b[n-1])
+                M++;
+            else if(a[n]>b[n-1])
+                m++;
+        }
+        if(m1==t)
+        {
+            m=t;
+            M=0;
+        }
+        if(M==m)
+            printf("Xiaoming will get 0QB\n");
+        else if(m>M)
+            printf("Xiaoming will get %dQB\n",200*(m-M));
+        else if(M>m)
+            printf("Xiaotao will get %dQB\n",200*(M-m));
+    }
+    return 0;
+}

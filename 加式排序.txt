@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        char a[400],b[400],c,d,a1=0,a2=0,a3=0;
+        scanf("%s",a);
+        for(c=0;c<200;c++)
+        {
+            if(a[c]=='1')
+                a1++;
+            if(a[c]=='2')
+                a2++;
+            if(a[c]=='3')
+                a3++;
+        }
+        d=(a1+a2+a3)*2;
+        for(c=0;c<a1*2;c+=2)
+        {
+            b[c]='1';
+            b[c+1]='+';
+        }
+        for(c=a1*2;c<(a1+a2)*2;c+=2)
+        {
+            b[c]='2';
+            b[c+1]='+';
+        }
+        for(c=(a1+a2)*2;c<d;c+=2)
+        {
+            b[c]='3';
+            b[c+1]='+';
+        }
+        for(c=0;c<d-1;c++)
+            printf("%c",b[c]);
+        printf("\n");
+    }
+    return 0;
+}
