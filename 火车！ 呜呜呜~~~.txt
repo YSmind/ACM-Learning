@@ -1,0 +1,32 @@
+Description
+安妮最近喜欢上了坐火车上下班，我们知道一张火车票卖a元，m张火车票打包卖b元。安妮想让你帮她算一下坐n次火车，最少花费多少钱。
+
+Input
+输入只有一行，四个整数 n,m,a,b(1<=n,m,a,b<=1000)。
+
+Output
+输出最少花费。
+
+Sample Input
+5 2 2 3
+Sample Output
+8
+
+
+
+#include<stdio.h>
+#include<algorithm>
+#include<iostream>
+#include<string.h>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int n,m,a,b;
+    scanf ("%d%d%d%d",&n,&m,&a,&b);
+    int x=n/m,y=n%m,sum=0;//看看n中包含几个m，余数存到y中
+    sum+=min(x*b,x*m*a);
+    sum+=min(b,y*a);//均衡一下，余数一个个买票和再买m张哪个便宜
+    printf ("%d",sum);
+    return 0;
+}

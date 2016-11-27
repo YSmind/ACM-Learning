@@ -1,0 +1,58 @@
+Description
+小雨是一个非常慷慨的好孩子，有一次下雨为wjc和qh买了n个苹果，苹果的重量要么是100克要么是200克，小雨决定把所有的苹果以公平的方式分给他们两个人，但是小雨没有刀子所以苹果不能被切开，所以问有没有在不切开苹果的前提下让他们两个得到的苹果的重量一样的，并且苹果要全部给他们两个人。
+
+Input
+一个正整数T（T<100）代表一共有T组数据
+
+然后每一组数据有一个正整数n代表苹果的个数
+
+然后有w1，w2，……wn（wi=200||wi=100）代表苹果的重量。
+
+Output
+对于每一组数据如果有可行的方案输出YES，否则的话输出NO
+
+Sample Input
+1
+4
+100 100 100 200
+Sample Output
+NO
+
+
+
+#include<stdio.h>
+#include<algorithm>
+#include<iostream>
+#include<string.h>
+#include<math.h>
+using namespace std;
+#define N 3
+int w[N];
+int main()
+{
+    int t;
+    scanf ("%d",&t);
+    while(t--)
+    {
+        int n;
+        scanf ("%d",&n);
+        memset(w,0,sizeof(w));
+        int sum=0;
+        for (int i=1;i<=n;i++)
+        {
+            int x;
+            scanf ("%d",&x);
+            if (x==100)
+                w[1]++;
+            else
+                w[2]++;
+        }
+        if (w[1]%2)//100元是奇数，怎么也均分不了
+            printf ("NO\n");
+        else if (w[2]%2&&w[1]<2)//200元是奇数的，无论这个数是多么大都可以看成一个200元，那么就需要至少两个100来填充200的空余
+            printf ("NO\n");
+        else
+            printf ("YES\n");
+    }
+    return 0;
+}

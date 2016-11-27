@@ -1,0 +1,39 @@
+Description
+有一个n排n列的大格子，每个小格子标记为i*j。（i、j分别为该格子的行数和列数，都从1开始）
+
+给你一个数x，你的任务是计算x一共出现了几次。
+
+Input
+第一行有两个整数n，x（1<=n<=10^5,1<=x<=10^9）。
+
+Output
+输出一个数：x出现的次数。
+
+Sample Input
+10 5
+Sample Output
+2
+
+
+
+
+#include<stdio.h>
+#include<algorithm>
+#include<iostream>
+#include<string.h>
+#include<math.h>
+using namespace std;
+#define N 100005
+int main()
+{
+    int n,x;
+    scanf ("%d%d",&n,&x);
+    int sum=0;
+    for (int i=1;i<=n;i++)
+    {
+        if (x%i==0&&x/i<=n)//因为题目中给的n的范围会比x值小 所以x/i的结果在小于等于n之内才符合条件
+            sum++;
+    }
+    printf ("%d\n",sum);
+    return 0;
+}
