@@ -1,0 +1,18 @@
+//最短距离，就是这三个人最远点减去最近点
+#include<stdio.h>
+int main()
+{
+    int a,b,c;
+    scanf ("%d%d%d",&a,&b,&c);
+    int maxn=a,minn=a;
+    if (maxn<b)
+        maxn=b;
+    if (maxn<c)
+        maxn=c;
+    if (minn>b)
+        minn=b;
+    if (minn>c)
+        minn=c;
+    printf ("%d",maxn-minn);
+    return 0;
+}

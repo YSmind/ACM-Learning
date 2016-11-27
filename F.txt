@@ -1,0 +1,36 @@
+//注意单个0下次一定是up 单个15下次一定是down 其他单个数都是 -1
+#include<stdio.h>
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    if(t==1)
+    {
+
+        int a;
+        scanf("%d",&a);
+        if(a==0)
+            printf("up");
+        else if(a==15)
+            printf("down");
+        else
+            printf("-1");
+    }
+    else
+    {
+        t-=2;
+        int a,b,c;
+        while(t--)
+            scanf("%d",&c);
+        scanf("%d %d",&a,&b);
+        if(a>b&&b!=0)
+            printf("down");
+        else if(a>b&&b==0)
+            printf("up");
+        else if(a<b&&b==15)
+            printf("down");
+        else if(a<b&&b!=15)
+            printf("up");
+    }
+    return 0;
+}

@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while (t--)
+    {
+        int a;
+        scanf ("%d",&a);
+        if(a>=0&&a<30)
+        {
+            printf("你不懂礼貌\n");
+        }
+        else if (a>=30&&a<60)
+        {
+            printf("懂一点礼貌\n");
+        }
+        else if(a>=60&&a<=100)
+        {
+            printf("你是个好孩子\n");
+        }
+    }
+    return 0;
+}
