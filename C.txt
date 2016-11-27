@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double t,b,c;
+    scanf("%lf",&t);
+    while(t--)
+    {
+        double d;
+        scanf("%lf %lf",&b,&c);
+        d=pow(b,1.0/c);
+        d+=0.005;
+        printf("%.2lf\n",d);
+    }
+    return 0;
+}

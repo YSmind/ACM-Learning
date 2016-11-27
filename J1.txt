@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+    int t,T,a,b,c,d;
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%d %d %d %d",&a,&b,&c,&d);
+        T=a*2+d+c+b;
+        printf("%d\n",T);
+    }
+    return 0;
+}

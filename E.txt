@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int n,m,k,a,b;
+        scanf("%d %d %d",&n,&m,&k);
+        if(n>m)
+           {
+               a=n;
+               n=m;
+               m=a;
+           }
+        if(n%k==0&&m%k==0)
+            a=(n*m)/(k*k);
+        else if(n%k==0&&m%k!=0)
+            a=(n/k)*(m/k)+n/k;
+        else if(m%k==0&&n%k!=0)
+            a=(n/k)*(m/k)+m/k;
+        else
+        {
+            b=(n-n%k)%k;
+            if(b==0)
+            {
+                a=(n/k)*(m/k)+m/k+1+(n-n%k)/k;
+            }
+            else
+            {
+                a=(n/k)*(m/k)+m/k+1+(n-n%k)/k+1;
+            }
+        }
+        printf("%d\n",a);
+    }
+}
