@@ -1,0 +1,37 @@
+Input
+输入两个正整数m,n.(m,n,都是三位数)
+
+Output
+输出m,n,相加时需要进位多少次。
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int a,b,a1,a2,a3,b1,b2,b3,c1,c2,c3,f=0;
+    scanf("%d %d",&a,&b);
+    while(a!=0)
+    {
+        a1=a/100;
+        a2=a/10%10;
+        a3=a%10;
+        b1=b/100;
+        b2=b/10%10;
+        b3=b%10;
+        c3=a3+b3;
+        c2=a2+b2+c3/10;
+        c1=a1+b1+c2/10;
+        if(c3>9)
+            f++;
+        if(c2>9)
+            f++;
+        if(c1>9)
+            f++;
+        printf("%d\n",f);
+        f=0;
+        scanf("%d %d",&a,&b);
+    }
+    return 0;
+}

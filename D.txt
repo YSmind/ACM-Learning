@@ -1,0 +1,40 @@
+Input
+给出一个数字t（1<t<10），表示询问的次数。
+
+接下来每次给出一个十进制数n（1<=n<=1023），求出相应结果
+
+Output
+输出该数的二进制（必须是10位，不足10位向前补0）以及十六进制（大写字母）
+
+
+
+
+
+
+
+#include<stdio.h>
+int  main()
+{
+	int n[10],N[10],m,a,b,I,i;
+    scanf("%d",&a);
+    while(a--)
+    {
+        scanf("%d",&b);
+        m=b;
+        for(i=0;i<10;i++)
+        {
+            n[i]=b%2;
+            b=b/2;
+            I=9-i;
+            N[I]=n[i];
+        }
+        for(i=0;i<10;i++)
+            printf("%d",N[i]);
+	    printf(" ");
+	    if(m==0)
+            printf("0\n");
+        else
+	        printf("%X\n",m);
+    }
+	return 0;
+}

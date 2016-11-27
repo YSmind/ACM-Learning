@@ -1,0 +1,28 @@
+Input
+输入一个整数T，代表查询次数，接下来T行，每行两个数A,B（A和B的范围在2的64次方之内）
+
+Output
+输入两个数的最大公约数
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    long long a;
+    scanf("%lld",&a);
+    while(a--)
+    {
+        long long b,c,d;
+        scanf("%lld %lld",&b,&c);
+        while(c!=0)
+        {
+            d=b%c;
+            b=c;
+            c=d;
+        }
+        printf("%lld\n",b);
+    }
+}

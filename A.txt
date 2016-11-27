@@ -1,0 +1,40 @@
+Input
+首先输入一个整数X（X<100），表示前来应聘的学妹个数，然后输入X个数字。
+
+若整数X为0，表示不会有学妹看上曲浩这种人的，所以你要输出"可怜的曲浩"(只输出汉字，不输出双引号)
+
+Output
+然后就是排序了，从大到小，别忘了X为0的情况哦，排序的格式如下,保留两位小数
+
+A1 A2 A3 A4（此处没有空格哦）
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int cmp(const void *a,const void *b)
+{
+    return *(double*)a<*(double*)b?1:-1;//降序
+}
+int main()
+{
+    int a,b;
+    double c[100];
+    scanf("%d",&a);
+    for(b=0;b<a;b++)
+    {
+        scanf("%lf",&c[b]);
+    }
+    qsort(c,a,sizeof(c[0]),cmp);
+    for(b=0;b<a;b++)
+    {
+        printf("%.2lf  ",c[b]);
+    }
+    return 0;
+}
