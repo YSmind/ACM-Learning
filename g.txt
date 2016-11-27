@@ -1,0 +1,26 @@
+/*
+这是一个很简单的题，假设n<=m.
+如果n*2<=m.
+那么每一个有经验的带两个没经验的就可以了。
+其他的情况就是(n+m)/3。
+你可能担心第二种情况到底对不对，我可以负责任地告诉你一定对！
+
+当然n>m的情况和上面是一样的，所以按照n<=m来处理就好啦
+*/
+#include <stdio.h>
+
+int main()
+{
+    int i,n,m,T;
+    scanf("%d",&T);
+    while(T--){
+        scanf("%d%d",&n,&m);
+        if(n>m){
+            int t=n;n=m;m=t;
+        }
+        if(n*2<=m)
+            printf("%d\n",n);
+        else printf("%d\n",(n+m)/3);
+    }
+    return 0;
+}

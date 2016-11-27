@@ -1,0 +1,44 @@
+/*
+考查字符串数组。
+3个周前，你们不会字符串数组，现在总该会了吧~
+大家一直运行错误，就是数组开的小了，100肯定都不够，大家算一算久知道了啊，
+我都不忍心看你们错成那样。。
+以后大家做题开数组就尽量多开一点，用不着又不碍事。
+*/
+
+
+
+
+
+
+
+
+
+输入的第一行是一个整数T（T<=10），表示测试数据的组数：
+接下来每行一个话："My name is XXX."，其中XXX代表Jonariguez的名字，由一串英文字符组成，名字长度不超过100。
+
+Output
+每组数据的输出有一行："Hello,XXX!"，代表JLL的回答，其中XXX表示Jonariguez的名字。
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+char name[1200];	//我在这开到1200，一点事没有，还可以开到100000呢
+
+int main()
+{
+    int i,j,n,T;
+    scanf("%d",&T);
+    while(T--){
+        scanf("%s",name);
+        scanf("%s",name);
+        scanf("%s",name);
+        scanf("%s",name);
+        n=strlen(name);
+        name[n-1]='!';
+        printf("Hello,%s\n",name);
+    }
+    return 0;
+}

@@ -1,0 +1,36 @@
+/*
+四舍五入保留整数有比较常见的两种方法：
+①加0.5再强行转int
+②round()函数
+*/
+
+
+
+Input
+输入的第一行是一个整数T（T<=100），表示测试数据的组数：
+每组数据包含两个实数a，b。（0<=a,b<=100000）
+
+Output
+每组数据的输出有一行，表示a+b的和，结果四舍五入保留整数。
+
+
+#include <stdio.h>
+int main()
+{
+    int i,j,T;
+    scanf("%d",&T);
+    while(T--){
+        double a,b;
+        scanf("%lf%lf",&a,&b);
+        printf("%d\n",(int)(a+b+0.5));
+    }
+    return 0;
+}
+
+
+（包含在  <math.h>）
+ceil(x)返回不小于x的最小整数值（然后转换为double型）。
+
+floor(x)返回不大于x的最大整数值。
+
+round(x)返回x的四舍五入整数值。
