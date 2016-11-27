@@ -1,0 +1,18 @@
+#include<stdio.h>
+void code(int x)
+{
+    if((x/2)!=0)
+    {
+        code(x/2);
+        printf("%d",x%2);        //输出在递归之后，保证逆序输出
+    }
+    else
+        printf("%d",x);
+}
+int main()
+{
+    int a;
+    scanf("%d",&a);
+    code(a);
+    return 0;
+}

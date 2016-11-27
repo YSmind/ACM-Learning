@@ -1,0 +1,23 @@
+#include<stdio.h>
+void move(int a,char x,char y,char z)
+{
+    if(a==1)
+    {
+        printf("把一个盘子从%c移动到%c\n",x,z);
+    }
+    else
+    {
+        move(a-1,x,z,y);
+        printf("把一个盘子从%c移动到%c\n",x,z);
+        move(a-1,y,x,z);
+    }
+}
+int main()
+{
+    int n;
+    printf("盘子个数： ");
+    scanf("%d",&n);
+    printf("步骤为：\n");
+    move(n,'A','B','C');
+    return 0;
+}

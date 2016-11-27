@@ -1,0 +1,122 @@
+int型：
+#include <stdio.h>
+#include<stdlib.h>
+int cmp ( const void *a , const void *b )
+{
+    return *(int *)a - *(int *)b;//升序（可改为降序）
+}
+int main()
+{
+    int n,i,a[100];
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    qsort(a,n,sizeof(a[0]),cmp);
+    for(i=0;i<n;i++)
+        printf("%d ",a[i]);
+    return(0);
+
+}
+
+
+double型：
+#include<stdio.h>
+#include<stdlib.h>
+int cmp( const void *a , const void *b)
+{
+    return *(double *)a > *(double *)b ? 1 : -1;//升序
+}
+int main()
+{
+    int n,i;
+    double x[100];
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%lf",&x[i]);
+    }
+    qsort(x,n,sizeof(x[0]),cmp);
+    for(i=0;i<n-1;i++)
+    {
+        printf("%.2lf ",x[i]);
+    }
+    printf("%.2lf",x[n-1]);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+实例
+首先输入一个整数X（X<100），表示前来应聘的学妹个数，然后输入X个数字。
+
+若整数X为0，表示不会有学妹看上曲浩这种人的，所以你要输出"可怜的曲浩"(只输出汉字，不输出双引号)
+
+Output
+然后就是排序了，从大到小，别忘了X为0的情况哦，排序的格式如下,保留两位小数
+
+A1 A2 A3 A4（此处没有空格哦）
+
+Sample Input
+8
+1.62 1.65 1.68 1.58 1.55 1.72 1.75 1.77
+Sample Output
+1.77 1.75 1.72 1.68 1.65 1.62 1.58 1.55
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+float comp(const void *b,const void *c)    //必须为int comp（），应为：  int comp(const void *b,const void *c)
+{
+    return(*(float*)b-*(float*)c);
+}
+int main()
+{
+    int a,i;
+    scanf("%d",&a);
+    float b[a];
+    for(i=0;i<a;i++)
+        scanf("%f",&b[i]);
+    qsort(b,a,sizeof(b[0]),comp);
+    for(i=0;i<a;i++)
+        printf("%.2f ",b[i]);
+    return 0;
+}
+
+错
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int cmp( const void *c , const void *d )
+{
+return *(double *)c > *(double *)d ? 1 : -1;
+}
+int main()
+{
+    int a,A,i;
+    scanf("%d",&a);
+    if(a!=0)
+    {
+    float b[a];
+    for(i=0;i<a;i++)
+        scanf("%f",&b[i]);
+    qsort(b,a,sizeof(b[0]),comp);
+    for(i=a-1;i>=0;i--)
+        printf("%.2f ",b[i]);
+    }
+    else
+        printf("可怜的曲浩");
+    return 0;
+}
+

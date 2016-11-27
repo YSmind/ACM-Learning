@@ -1,0 +1,51 @@
+#include<stdio.h>
+int main()
+{
+    int a=1,b=1,c,d,N,f;
+    scanf("%d",&N);
+    if(N==1)
+        printf("1");
+    else if(N==2)
+        printf("1 1");
+    else
+    {
+        printf("1 1");
+        N-=2;
+        f=0;
+        while(N--)
+        {
+            f++;
+            if(f%2)
+            {
+                a=a+b;
+                printf(" %d",a);
+            }
+            else
+            {
+                b=a+b;
+                printf(" %d",b);
+            }
+        }
+    }
+    return 0;
+}
+
+
+¸Ä£º
+#include<stdio.h>
+int main()
+{
+    long long int a,b,c,d;
+    long long int C[55];
+    a=0;
+    b=1;
+    C[0]=0;
+    C[1]=1;
+    for(c=2;c<55;c++)
+    {
+        C[c]=C[c-1]+C[c-2];
+    }
+    for(c=0;c<55;c++)
+        printf("%lld\n",C[c]);
+    return 0;
+}
